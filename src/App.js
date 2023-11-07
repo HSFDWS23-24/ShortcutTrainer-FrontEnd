@@ -1,44 +1,10 @@
 import logo from './logo.svg';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Landing from './Components/Landing';
 import './App.css';
 
-function App() {
-}
-
-function MenuPoint(props) {
-  
-}
-
-function MyProfile(props) {
-  
-}
-
-function Landing(props) {
-  
-}
-
-function AllCourses(props) {
-  
-}
-
-function SignUp(props) {
-  
-}
-
-function Result(props) {
-  
-}
-
-function Test(props) {
-  
-}
-
-function Course(props) {
-  
-}
-
-function Learn(props) {
-  
+function App(porps) {
+    
 }
 
 export default App;
