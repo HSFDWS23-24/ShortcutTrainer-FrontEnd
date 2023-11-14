@@ -4,6 +4,9 @@ import Landing from './Components/Landing';
 import './App.css';
 
 function App(porps) {
+    return (
+      <Landing/>  
+    );
     
 }
 

@@ -1,0 +1,47 @@
+.course_main{
+    display: flex;
+    flex-direction: column;
+}
+
+.course_middle{
+    display: flex;
+    flex-direction: row;
+
+}
+
+:root{
+    /* --md-elevated-button-label-text-color: blue*/
+}
+
+
+.star-button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+    height: 80px;
+    font-size: 70px;
+   
+
+  }
+  
+  .star {
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  
+  .star-button:hover  {
+    transform: scale(1.2); /* Make the star slightly larger on hover */
+  }
+
+  .learn_test_buttons{
+    justify-content: center;
+    margin-top: 30px;
+    display: flex;
+
+    
+  }
+
+  .test_button{
+    margin-right: 70px;
+  }
