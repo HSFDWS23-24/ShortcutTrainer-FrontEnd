@@ -17,12 +17,17 @@ export default function Course(props) {
     <>
       <main>
         <div className="course_main">
+          <div className="headline">
           <Typography variant="h3" color="textPrimary">
             {props.title}
           </Typography>
+          </div>
+
 
           <div className="course_middle">
+            <div className="description">
             <Typography>{props.description}</Typography>
+            </div>
             <button
               className="star-button"
               onClick={starbuttonChange}

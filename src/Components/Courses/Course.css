@@ -1,47 +1,89 @@
-.course_main{
-    display: flex;
-    flex-direction: column;
+body {
+  background-color: rgb(167, 159, 159);
+  height: 100%;
+  width: 100%; 
 }
 
-.course_middle{
-    display: flex;
-    flex-direction: row;
+main{
+  background-color: grey;
+}
+
+
+.course_main {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 3px solid #e0e0e0;
+  border-radius: 10%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.headline{
+  width: 1100px;
+  padding-left: 20px;
+	border-bottom: 2px solid #ccc;
+}
+
+.course_middle {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
 
 }
 
-:root{
-    /* --md-elevated-button-label-text-color: blue*/
+
+.description {
+  width: 80%;
+  /* Set the desired width */
+  margin: 0 auto;
+  /* Center the description */
+
+}
+
+
+:root {
+  /* --md-elevated-button-label-text-color: blue*/
 }
 
 
 .star-button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background: none;
-    height: 80px;
-    font-size: 70px;
-   
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  height: 80px;
+  font-size: 70px;
+  width: 10%;
 
-  }
-  
-  .star {
-    display: inline-block;
-    transition: transform 0.3s;
-  }
-  
-  .star-button:hover  {
-    transform: scale(1.2); /* Make the star slightly larger on hover */
-  }
 
-  .learn_test_buttons{
-    justify-content: center;
-    margin-top: 30px;
-    display: flex;
+}
 
-    
-  }
+.star {
+  display: inline-block;
+  transition: transform 0.3s;
+}
 
-  .test_button{
-    margin-right: 70px;
-  }
+.star-button:hover {
+  transform: scale(1.2);
+  /* Make the star slightly larger on hover */
+}
+
+.learn_test_buttons {
+  justify-content: center;
+  margin-top: 30px;
+  display: flex;
+
+
+}
+
+.test_button {
+  margin-right: 70px;
+}
+
+md-elevated-button:hover {
+  filter: brightness(1.1);
+}
