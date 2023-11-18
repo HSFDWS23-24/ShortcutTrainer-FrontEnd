@@ -1,0 +1,26 @@
+.landingText{
+    max-width: 100%;
+    border: 1px solid rgba(51, 49, 49, 0.849);
+    margin-top: 40px;
+    border-radius: 20px;
+    height: 46rem;
+}
+
+.textContainer {
+    border: 1px solid rgba(51, 49, 49, 0.849);  
+    border-radius: 30px;
+    font-size: 1.5rem;
+    width: 50%;
+    padding-top: 50px;
+    align-items: center;
+    margin-left: 50px;
+    height: 33rem;
+    margin-top: 3ch;
+    background-color:  rgba(89, 102, 95, 0.3);
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 40px;
+}
