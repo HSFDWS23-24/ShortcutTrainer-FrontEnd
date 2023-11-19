@@ -5,12 +5,15 @@ import Course from './Course';
 export default function MyCourses(){
     //Hier sollten die Kurse gefetched werden, die der Nutzer gerade besucht
     const myCourses = [
-        1,5,3,6
+        {courseId: 1, courseName: "Testkurs"},
+        {courseId: 2, courseName: "Testkurs2"},
+        {courseId: 3, courseName: "Testkurs3"},
+        {courseId: 4, courseName: "Testkurs4"},
     ];
 
     const courseElements = myCourses.map(e=>{
-        return <Course courseId={e}></Course>
+        return <Course courseDetails={e}></Course>
     });
 
-    return courseElements;
+    return <div className='myCourses'>{courseElements}</div>;
 }
