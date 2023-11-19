@@ -4,5 +4,9 @@ import Test from '../StudyingMethods/Test';
 import './Course.css';
 
 export default function Course(props) {
-  return <div>Ich bin Kurs Nr. {props.courseId}</div>
+  return <div className='courseContainer'>
+    <h2 className='courseTitle'>{props.courseDetails.courseName}</h2>
+    <div className='courseIcon'></div>
+    {/* Progress bar */}
+  </div>
 }
