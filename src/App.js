@@ -5,9 +5,10 @@ import Course from './Components/Courses/Course';
 import './App.css';
 import Menu from './Components/Menu';
 
+
 function App(porps) {
-    return (
+    return(
         <Menu />  
-      <MyCourses></MyCourses>
+      <Landing />
     );
 }
