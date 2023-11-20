@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './MyCourses.css';
-import Course from './Course';
+import CourseTile from './CourseTile';
 
 export default function MyCourses(){
     //Hier sollten die Kurse gefetched werden, die der Nutzer gerade besucht
@@ -12,7 +12,7 @@ export default function MyCourses(){
     ];
 
     const courseElements = myCourses.map(e=>{
-        return <Course courseDetails={e}></Course>
+        return <CourseTile courseDetails={e}></CourseTile>
     });
 
     return <div className='myCourses'>{courseElements}</div>;
