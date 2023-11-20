@@ -1,0 +1,27 @@
+.footer{
+    justify-content: space-evenly;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 50px;
+    padding-right: 50px;
+    border-top: 2px solid grey
+}
+
+.description{
+}
+
+.quicklinks-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.quicklinks{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-items{
+    padding: 50px;
+}
