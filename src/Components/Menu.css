@@ -1,0 +1,146 @@
+/* Menu.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.menu div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 1.5rem;
+  margin-left: 5px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.user-actions button {
+  margin-left: 10px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-profile span {
+  margin-left: 5px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #747070;
+  color: white;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+
+
+.menu-items {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: #333;
+  width: 20%;
+  padding: 10px;
+}
+
+.menu-items.show {
+  display: flex;
+}
+
+.menu-items span {
+  margin: 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #333;
+  padding: 8px;
+}
+
+.menu-items span:hover {
+  background-color: #555;
+}
+
+.menu-items span.active {
+  background-color: #777;
+}
+
+.sign-in:hover {
+  border-style: 1 solid #555;
+  border-radius: 10px;
+  background-color: #555;
+}
+
+.user-profile:hover {
+  border-style: 1 solid #555;
+  border-radius: 10px;
+  background-color: #555;
+}
+
+
+.sign-up:hover {
+  border-style: 1 solid #555;
+  border-radius: 10px;
+  background-color: #555;
+}
+
+.search-bar {
+  border-radius: 10px;
+  height: 1.5rem;
+  width: 70%;
+  max-width: 300px;
+}
+
+.worldIcon{
+  float: left;
+  margin-right: 5px;
+}
+.languageselect{
+  float: right;
+}

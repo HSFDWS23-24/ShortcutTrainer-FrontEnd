@@ -3,8 +3,11 @@ import React, { useEffect, useState } from 'react';
 import Landing from './Components/Landing';
 import Course from './Components/Courses/Course';
 import './App.css';
-import MyCourses from './Components/Courses/MyCourses';
+import Menu from './Components/Menu';
 
-export default function App(porps) {
-    return <MyCourses></MyCourses>
+function App(porps) {
+    return (
+        <Menu />  
+      <MyCourses></MyCourses>
+    );
 }
