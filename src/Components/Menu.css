@@ -136,3 +136,11 @@ button {
   width: 70%;
   max-width: 300px;
 }
+
+.worldIcon{
+  float: left;
+  margin-right: 5px;
+}
+.languageselect{
+  float: right;
+}

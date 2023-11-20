@@ -10,6 +10,7 @@ export default function MenuComponent(props) {
   const [searchQuery, setSearchQuery] = useState('');
   const [showMenu, setShowMenu] = useState(false);
   const [activeMenuItem, setActiveMenuItem] = useState('');
+  const [selectedLanguage, setSelectedLanguage] = useState('en'); // Default language
   const menuRef = useRef(null);
 
   const handleSearch = () => {
@@ -28,6 +29,12 @@ export default function MenuComponent(props) {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setShowMenu(false);
     }
+  };
+
+  const handleLanguageChange = (event) => {
+    setSelectedLanguage(event.target.value);
+    // You can perform any language-related logic here
+    console.log('Selected Language:', event.target.value);
   };
 
   useEffect(() => {
@@ -81,8 +88,16 @@ export default function MenuComponent(props) {
         </button>
       </div>
 
-      <div className='languageselect'>
-        <ImEarth />
+      <div className='language'>
+        <div className='worldIcon'>
+          <ImEarth />
+        </div>
+        <div className='languageselect'>
+          <select id="languageSelect" value={selectedLanguage} onChange={handleLanguageChange}>
+            <option value="en">English</option>
+            <option value="de">German</option>
+          </select>
+        </div>
       </div>
 
       <div className="user-actions">
