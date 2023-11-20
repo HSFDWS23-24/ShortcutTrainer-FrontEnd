@@ -8,7 +8,6 @@ main{
   background-color: grey;
 }
 
-
 .course_main {
   max-width: 1300px;
   margin: 0 auto;
@@ -34,7 +33,6 @@ main{
   flex-direction: row;
 
 }
-
 
 .description {
   width: 80%;
@@ -82,8 +80,4 @@ main{
 
 .test_button {
   margin-right: 70px;
-}
-
-md-elevated-button:hover {
-  filter: brightness(1.1);
 }
