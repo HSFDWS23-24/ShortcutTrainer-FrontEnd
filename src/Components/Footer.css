@@ -1,14 +1,13 @@
 .footer{
+    background-color: #747070;
     justify-content: space-evenly;
     display: flex;
     bottom: 0;
-    width: 100%;
-    padding: 50px;
-    padding-right: 50px;
-    border-top: 2px solid grey
+    padding: 20px;
+    margin-top: 50px;
 }
 
-.description{
+.description-footer{
 }
 
 .quicklinks-container{
@@ -23,4 +22,5 @@
 
 .footer-items{
     padding: 50px;
+    color: white;
 }
