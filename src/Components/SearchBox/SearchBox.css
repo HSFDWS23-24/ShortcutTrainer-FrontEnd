@@ -1,0 +1,12 @@
+.searchbox{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.searchbox_textfield{
+    width: fit-content;
+}
+
+.priceSlider{
+    margin: auto;
+}
