@@ -1,7 +1,6 @@
 .footer{
     justify-content: space-evenly;
     display: flex;
-    position: fixed;
     bottom: 0;
     width: 100%;
     padding: 50px;
