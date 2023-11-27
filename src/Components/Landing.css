@@ -2,7 +2,6 @@
     max-width: 100%;
     border: 1px solid rgba(51, 49, 49, 0.849);
     margin-top: 40px;
-    border-radius: 20px;
     padding: 30px 15px 0 15px;
     height: 46rem;
     text-align: justify;
@@ -13,16 +12,16 @@
     border-radius: 30px;
     font-size: 1.5rem;
     width: 50%;
-    padding: 30px 15px 0px 15px;
+    padding: 10px 15px 0px 15px;
     align-items: center;
     margin-left: 25px;
     height: auto;
-    margin-top: 3ch;
+    margin-top: 10px;
     background-color:  rgba(246, 248, 247, 0.986);
 }
 
 .title{
     text-align: justify;
     margin-bottom: 20px;
-    padding: 20px 15px 0px 0px;
+    padding: 0px 15px 0px 0px;
 }
