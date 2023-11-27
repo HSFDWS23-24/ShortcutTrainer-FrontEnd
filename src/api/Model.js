@@ -37,7 +37,7 @@ function getAllCourses() {
     },
     {
         courseId: 6,
-        courseTitle: "Testkurs2",
+        courseTitle: "Testkurs234",
         description: "Das ist ein toller Kurs",
         imageUrl: "https://images.t3n.de/news/wp-content/uploads/2022/11/getimgai-ki-bilder.jpg?class=hero-small",
         isFavourite: false,
@@ -66,4 +66,8 @@ function getQuestions(id) {
                 ]
         }
     ];
+}
+
+module.exports = {
+    getAllCourses, getQuestions
 }
