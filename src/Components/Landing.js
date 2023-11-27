@@ -9,6 +9,10 @@ import "./Landing.css";
 
 
 export default function Landing(props) {
+  function clickedTileHandler (clickedTile) {
+    props.clickedTileToApp(clickedTile);
+    
+  } 
   
   return (
     <main>
@@ -33,7 +37,7 @@ export default function Landing(props) {
           </p>
         </div>
       </div>
-      <MyCourses/>
+      <MyCourses clickedTileToLanding={clickedTileHandler} />
 
     </main>
   );
