@@ -5,18 +5,18 @@ import "./Course.css";
 import { Typography } from "@mui/material";
 import "@material/web/button/elevated-button.js";
 import "@material/web/button/outlined-button.js";
-
+import Api from "../../api/Model";
 
 export default function Course(props) {
 
   const [isYellow, setYellow] = useState(props.course.isFavourite);
 
-
-
   const starbuttonChange = () => {
     setYellow(previsYellow => !previsYellow);
   };
 
+  const allQuestions = Api.getQuestions(props.course.courseId);
+  
   return (
     <>
       <main>
