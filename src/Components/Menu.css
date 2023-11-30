@@ -1,31 +1,8 @@
 /* Menu.css */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
+.toolbar{
+  background-color: #444;
 }
 
-.menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #333;
-  color: white;
-  border: 1px solid #555;
-  border-radius: 4px;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-}
-
-.menu div {
-  padding: 8px;
-  cursor: pointer;
-}
 
 .logo {
   font-size: 1.5rem;
@@ -37,16 +14,14 @@
   align-items: center;
 }
 
-input {
-  padding: 5px;
-  margin-right: 5px;
-}
-
 button {
   background-color: transparent;
   border: none;
-  color: white;
+  color: white !important;
   cursor: pointer;
+  text-align: left !important;
+  align-items: start;
+
 }
 
 .user-actions button {
@@ -63,22 +38,10 @@ button {
   margin-left: 5px;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #747070;
-  color: white;
-}
-
 .menu-icon {
   font-size: 1.5rem;
   cursor: pointer;
 }
-
-
-
 
 .menu-items {
   display: none;
@@ -86,44 +49,39 @@ button {
   position: absolute;
   top: 50px;
   left: 0;
-  background-color: #333;
   width: 20%;
-  padding: 10px;
+  padding: 10px 0 0 30px;
+  text-align: left !important;
+  align-items: start;
+  z-index: 1;
+  
 }
 
 .menu-items.show {
   display: flex;
+  text-align: left !important;
+  align-items: start;
+  padding: 10px 0 0 30px;
+  
 }
 
-.menu-items span {
+.menu-items {
   margin: 5px 0;
   cursor: pointer;
   transition: background-color 0.3s;
-  background-color: #333;
-  padding: 8px;
+  text-align: left !important;
+  align-items: start;
+  padding: 10px 0 0 30px;
 }
 
-.menu-items span:hover {
-  background-color: #555;
+.menu-items {
+  background-color: #444;
+  align-items: start;
+  padding: 10px 0 0 30px;
 }
 
-.menu-items span.active {
-  background-color: #777;
-}
-
-.sign-in:hover {
-  border-style: 1 solid #555;
-  border-radius: 10px;
-  background-color: #555;
-}
-
-.user-profile:hover {
-  border-style: 1 solid #555;
-  border-radius: 10px;
-  background-color: #555;
-}
-
-
+.sign-in:hover,
+.user-profile:hover,
 .sign-up:hover {
   border-style: 1 solid #555;
   border-radius: 10px;
@@ -131,16 +89,49 @@ button {
 }
 
 .search-bar {
-  border-radius: 10px;
-  height: 1.5rem;
+  height: 2.5rem;
   width: 70%;
   max-width: 300px;
+  
 }
 
-.worldIcon{
+
+.search {
+  border-radius: 10px;
+  border: 1px solid white;
+  height: 2.5rem;
+  width: 90%;
+  max-width: 300px;
+  background-color: white;
+}
+
+
+.worldIcon {
   float: left;
   margin-right: 5px;
 }
-.languageselect{
+
+.MuiSelect-select{
+  color: white !important;
+  
+}
+.languageselect {
   float: right;
+  border: 1px solid white !important;
+  color: white !important;
+}
+
+Select{
+  color: white !important;
+}
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: white;
+}
+
+.search-input {
+  margin-right: 8px;
 }

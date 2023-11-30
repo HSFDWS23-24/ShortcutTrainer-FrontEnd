@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
+import { AppBar, Toolbar, IconButton, InputBase, Button, Select, MenuItem } from '@mui/material';
 import { FaSearch, FaUser, FaBars, FaHome } from 'react-icons/fa';
 import './Menu.css';
 import { ImFileText2, ImEarth } from "react-icons/im";
@@ -7,15 +8,10 @@ import { ImFileText2, ImEarth } from "react-icons/im";
 
 export default function MenuComponent(props) {
 
-  const [searchQuery, setSearchQuery] = useState('');
-  const [showMenu, setShowMenu] = useState(false);
-  const [activeMenuItem, setActiveMenuItem] = useState('');
-  const [selectedLanguage, setSelectedLanguage] = useState('en'); // Default language
-  const menuRef = useRef(null);
-
-  const handleSearch = () => {
-    console.log('Searching for:', searchQuery);
-  };
+  const [showMenu, setShowMenu] = React.useState(false);
+  const [activeMenuItem, setActiveMenuItem] = React.useState('Item 1');
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const [selectedLanguage, setSelectedLanguage] = React.useState('en');
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -23,91 +19,93 @@ export default function MenuComponent(props) {
 
   const handleMenuItemClick = (item) => {
     setActiveMenuItem(item);
+    // Add logic you need when a menu item is clicked
   };
 
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setShowMenu(false);
-    }
+  const handleSearch = () => {
+    //logic for handling search
   };
 
   const handleLanguageChange = (event) => {
     setSelectedLanguage(event.target.value);
-    // You can perform any language-related logic here
-    console.log('Selected Language:', event.target.value);
+    // Add logic for handling language change
   };
 
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
-
-
   return (
-    <nav className="navbar">
-      <div className="menu-icon" onClick={toggleMenu}>
-        <FaBars />
-      </div>
+    <AppBar position="static">
+      <Toolbar className='toolbar' style={{ justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <IconButton className="menu-icon" onClick={toggleMenu} color="inherit">
+            <FaBars />
+          </IconButton>
 
-      <div className={`menu-items ${showMenu ? 'show' : ''}`}>
-        <span
-          className={activeMenuItem === 'Item 1' ? 'active' : ''}
-          onClick={() => handleMenuItemClick('Item 1')}
-        >
-          <FaHome />  Home
-        </span>
-        <span
-          className={activeMenuItem === 'Item 2' ? 'active' : ''}
-          onClick={() => handleMenuItemClick('Item 2')}
-        >
-          <ImFileText2 />  All Courses
-        </span>
-        <span
-          className={activeMenuItem === 'Item 3' ? 'active' : ''}
-          onClick={() => handleMenuItemClick('Item 3')}
-        >
-          Menu Item 3
-        </span>
-      </div>
+          <div className={`menu-items ${showMenu ? 'show' : ''}`}>
+            <Button
+              className={activeMenuItem === 'Item 1' ? 'active' : ''}
+              onClick={() => handleMenuItemClick('Item 1')}
+              startIcon={<FaHome />}
+            >
+              Home
+            </Button>
+            <Button
+              className={activeMenuItem === 'Item 2' ? 'active' : ''}
+              onClick={() => handleMenuItemClick('Item 2')}
+              startIcon={<ImFileText2 />}
+            >
+              All Courses
+            </Button>
+            <Button
+              className={activeMenuItem === 'Item 3' ? 'active' : ''}
+              onClick={() => handleMenuItemClick('Item 3')}
+            >
+              Menu Item 3
+            </Button>
+          </div>
 
-      <div className="logo">Shurtcat  Tainer</div>
-
-      <div className="search-bar">
-        <input
-          className="search-bar"
-          type="text"
-          placeholder="Search..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button onClick={handleSearch}>
-          <FaSearch />
-        </button>
-      </div>
-
-      <div className='language'>
-        <div className='worldIcon'>
-          <ImEarth />
+          <div className="logo">Shortcut Tainer</div>
         </div>
-        <div className='languageselect'>
-          <select id="languageSelect" value={selectedLanguage} onChange={handleLanguageChange}>
-            <option value="en">English</option>
-            <option value="de">German</option>
-          </select>
-        </div>
-      </div>
 
-      <div className="user-actions">
-        <button className="sign-up">Sign Up</button>
-        <button className="sign-in">Sign In</button>
-      </div>
-      <div className="user-profile">
-        <FaUser />
-        <span>User Name</span>
-      </div>
-    </nav>
+        <div className="search-bar" style={{ flexGrow: 1, textAlign: 'center' }}>
+          <InputBase
+            className="search"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <IconButton onClick={handleSearch} color="inherit">
+            <FaSearch />
+          </IconButton>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div className='language'>
+            <div className='worldIcon'>
+              <ImEarth />
+            </div>
+            <div className='languageselect'>
+              <Select
+                id="languageSelect"
+                value={selectedLanguage}
+                onChange={handleLanguageChange}
+                label="Language"
+              >
+                <MenuItem value="en">English</MenuItem>
+                <MenuItem value="de">German</MenuItem>
+              </Select>
+            </div>
+          </div>
+
+          <div className="user-actions">
+            <Button className="sign-up" color="inherit">Sign Up</Button>
+            <Button className="sign-in" color="inherit">Sign In</Button>
+          </div>
+
+          <div className="user-profile">
+            <FaUser />
+            <span>User Name</span>
+          </div>
+        </div>
+      </Toolbar>
+    </AppBar>
   );
 };
