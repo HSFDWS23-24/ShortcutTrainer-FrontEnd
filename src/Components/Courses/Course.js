@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Learn from "../StudyingMethods/Learn";
 import Test from "../StudyingMethods/Test";
+import Question from "../Questions/Question" //temporär
 import "./Course.css";
 import { Typography } from "@mui/material";
 import "@material/web/button/elevated-button.js";
@@ -53,6 +54,7 @@ export default function Course(props) {
             </div>
           </div>
         </div>
+        <Question/>
       </main>
     </>
   );
