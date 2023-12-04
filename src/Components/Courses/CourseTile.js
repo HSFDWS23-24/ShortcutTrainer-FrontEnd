@@ -8,12 +8,9 @@ export default function Course(props) {
     props.clickedTile([true, courseId]);
     console.log(true);
   }
-
-  return (
-    <div onClick={() => clickHandler(1)} className='courseTileContainer'>
-      <h2 className='courseTileTitle'>{props.courseDetails.courseName}</h2>
-      <div className='courseTileIcon'></div>
-      {/* Progress bar */}
-    </div>
-  );
+  const url = "url(" + props.courseDetails.imageUrl + ")";
+  return <div onClick={() => clickHandler(1)} className='courseTileContainer' style={{backgroundImage: url}}>
+    <h2 className='courseTileTitle'>{props.courseDetails.courseTitle}</h2>
+    {/* Progress bar */}
+  </div>
 }

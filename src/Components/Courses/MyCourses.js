@@ -1,21 +1,14 @@
-import React from "react";
-import "./MyCourses.css";
-import CourseTile from "./CourseTile";
-import Course from "./Course";
-import { Button } from "@material/web/button/internal/button";
+import React, { useState } from 'react';
+import './MyCourses.css';
+import CourseTile from './CourseTile';
+import api from '../../api/Model';
 
 export default function MyCourses(props) {
-  //Hier sollten die Kurse gefetched werden, die der Nutzer gerade besucht
-
-  const myCourses = [
-    { courseId: 1, courseName: "Testkurs" },
-    { courseId: 2, courseName: "Testkurs2" },
-    { courseId: 3, courseName: "Testkurs3" },
-    { courseId: 4, courseName: "Testkurs4" },
-  ];
-  function clickedTileHandler (clickedTile) {
+  function clickedTileHandler(clickedTile) {
     props.clickedTileToLanding(clickedTile);
-  } 
+  }
+  //Hier sollten die Kurse gefetched werden, die der Nutzer gerade besucht
+  const myCourses = api.getAllCourses();
 
 
   const courseElements = myCourses.map((course) => {
