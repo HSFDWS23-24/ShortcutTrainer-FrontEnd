@@ -45,7 +45,7 @@ export default function Course(props) {
               </Button>
             </div>
             <div className="learn_button">
-              <Button>
+              <Button onClick={props.clickTestHandler}>
                 <Typography>Test</Typography>
               </Button>
             </div>
