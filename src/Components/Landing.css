@@ -1,27 +1,142 @@
-.landingText{
+.landingText {
     max-width: 100%;
-    border: 1px solid rgba(51, 49, 49, 0.849);
-    margin-top: 40px;
-    padding: 30px 15px 0 15px;
+    margin-top: 10px;
     height: 46rem;
-    text-align: justify;
-}
+    padding: 20px;
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:initial;
+
+
+    background-color: rgba(0, 0, 0, 0);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: linear-gradient(0deg, rgb(248, 249, 250), rgb(91, 69, 216));
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
+
+    margin-bottom: 20px;
+    text-align: left;
+
+
+  }
 
 .textContainer {
-    border: 1px solid rgba(51, 49, 49, 0.849);  
-    border-radius: 30px;
+
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     font-size: 1.5rem;
-    width: 50%;
-    padding: 10px 15px 0px 15px;
-    align-items: center;
-    margin-left: 25px;
-    height: auto;
-    margin-top: 10px;
-    background-color:  rgba(246, 248, 247, 0.986);
+    padding-top: 50px;
+    align-items: left;
+    margin-left: 50px;
+    height: 33rem;
+    width: 40%;
+    margin-top: 3ch;
+    background-color:  rgba(255, 255, 255, 0);
+    text-align: justify;
+    margin-left: 20%;
+ 
+
 }
 
+/*
 .title{
-    text-align: justify;
+    text-align: center;
     margin-bottom: 20px;
-    padding: 0px 15px 0px 0px;
+    padding-top: 40px;
 }
+/
+
+
+.title {
+    color: white; / Farbe des Titels /
+    font-size: 24px; / Schriftgröße des Titels /
+    margin-bottom: 10px; / Abstand unter dem Titel /
+  }
+
+  .container {
+    max-width: 800px; / Maximale Breite des Containers /
+    margin: 0 auto; / Zentrierung des Containers /
+    padding: 20px; / Innenabstand des Containers /
+    line-height: 1.6; / Zeilenhöhe des Texts /
+  }
+
+  p {
+    margin-bottom: 15px; / Abstand unter den Absätzen 
+  }*/
+.landingText {
+    max-width: 100%;
+    margin-top: 10px;
+    height: 46rem;
+    padding: 20px;
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:initial;
+
+
+    background-color: rgba(0, 0, 0, 0);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: linear-gradient(0deg, rgb(248, 249, 250), rgb(91, 69, 216));
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
+
+    margin-bottom: 20px;
+    text-align: left;
+
+
+  }
+
+.textContainer {
+
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-size: 1.5rem;
+    padding-top: 50px;
+    align-items: left;
+    margin-left: 50px;
+    height: 33rem;
+    width: 40%;
+    margin-top: 3ch;
+    background-color:  rgba(255, 255, 255, 0);
+    text-align: justify;
+    margin-left: 20%;
+ 
+
+}
+
+/*
+.title{
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 40px;
+}
+/
+
+
+.title {
+    color: white; / Farbe des Titels /
+    font-size: 24px; / Schriftgröße des Titels /
+    margin-bottom: 10px; / Abstand unter dem Titel /
+  }
+
+  .container {
+    max-width: 800px; / Maximale Breite des Containers /
+    margin: 0 auto; / Zentrierung des Containers /
+    padding: 20px; / Innenabstand des Containers /
+    line-height: 1.6; / Zeilenhöhe des Texts /
+  }
+
+  p {
+    margin-bottom: 15px; / Abstand unter den Absätzen */
+  /*}*/

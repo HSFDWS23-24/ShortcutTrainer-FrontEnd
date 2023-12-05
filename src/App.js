@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import React, { useEffect, useState } from "react";
 import Landing from "./Components/Landing";
 import Course from "./Components/Courses/Course";
+import Learn from "./Components/Courses/Learn";
 import "./App.css";
 import Menu from "./Components/Menu";
 import Footer from "./Components/Footer";
@@ -20,12 +21,33 @@ export default function App(porps) {
     }
   }
 
+  function clickLearnHandler(){
+    setMain("Learn");
+  }
+
+  var view = <Landing clickedTileToApp={clickedTileHandler} />;
+  switch (main) {
+    case "Landing":
+      view = <Landing clickedTileToApp={clickedTileHandler} />;
+      break;
+
+    case "Course":
+      view = <Course course={getcourse} clickLearnHandler = {clickLearnHandler} />;
+      break;
+
+    case "Learn":
+      view = <Learn course={getcourse}></Learn>;
+      break;
+
+    default:
+      break;
+  }
+
   return (
     <main>
       <Menu />
 
-      {main === "Landing" && <Landing clickedTileToApp={clickedTileHandler} />}
-      {main === "Course" && <Course course={getcourse} />}
+      {view}
 
       <Footer />
     </main>

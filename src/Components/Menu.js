@@ -65,17 +65,7 @@ export default function MenuComponent(props) {
           <div className="logo">Shortcut Tainer</div>
         </div>
 
-        <div className="search-bar" style={{ flexGrow: 1, textAlign: 'center' }}>
-          <InputBase
-            className="search"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <IconButton onClick={handleSearch} color="inherit">
-            <FaSearch />
-          </IconButton>
-        </div>
+      
 
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div className='language'>
