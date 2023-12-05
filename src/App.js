@@ -37,8 +37,7 @@ export default function App(porps) {
       break;
 
     case "Course":
-      view = <Course course={getcourse} clickLearnHandler = {clickLearnHandler} />;
-      view = <Course course={getcourse} clickTestHandler = {clickTestHandler} />;
+      view = <Course course={getcourse} clickLearnHandler = {clickLearnHandler} clickTestHandler = {clickTestHandler} />;
       break;
 
     case "Learn":
@@ -46,7 +45,7 @@ export default function App(porps) {
       break;
 
     case "Test":
-      view = <Test course={getcourse}></Test>;
+      view = <Test course={getcourse}></Test>
       break;
 
     default:
