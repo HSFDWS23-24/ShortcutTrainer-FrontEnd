@@ -53,12 +53,15 @@ export default function App(porps) {
   }
 
   return (
-    <main>
-      <Menu />
+    <>
+      <main>
+        <Menu />
 
-      {view}
+        {view}
+        
+      </main>
 
       <Footer />
-    </main>
+    </>
   );
 }
