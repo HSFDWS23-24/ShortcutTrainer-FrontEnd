@@ -3,6 +3,7 @@ import { useEffect, useState} from "react";
 import { Button } from "@mui/material";
 import Api from "../../api/Model";
 import './Learn.css';
+import Question from '../Questions/Question';
 
 export default function Learn(props){
 
@@ -39,6 +40,10 @@ export default function Learn(props){
                 <p> 
                 {allQuestions[questionNum].question}
                 </p>
+
+                <div class = "keyboard">
+                    <Question></Question>
+                </div>
 
                 <div class = "QuestionButtons">
                     <Button variant="contained" onClick={clickPreviousquestion}>Vorherige Frage</Button>

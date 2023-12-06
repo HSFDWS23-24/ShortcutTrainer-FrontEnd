@@ -57,7 +57,47 @@ function getQuestions(id) {
     return [
         {
             questionId: 3,
-            question: "Shortcut für Kopieren",
+            question: "Shortcut für Kopieren 3",
+            description: "Beschreibung",
+            keyCombination:
+                [
+                    64,
+                    83
+                ]
+        },
+        {
+            questionId: 4,
+            question: "Shortcut für Kopieren 4",
+            description: "Beschreibung",
+            keyCombination:
+                [
+                    64,
+                    83
+                ]
+        },
+        {
+            questionId: 5,
+            question: "Shortcut für Kopieren 5",
+            description: "Beschreibung",
+            keyCombination:
+                [
+                    64,
+                    83
+                ]
+        },
+        {
+            questionId: 6,
+            question: "Shortcut für Kopieren 6",
+            description: "Beschreibung",
+            keyCombination:
+                [
+                    64,
+                    83
+                ]
+        },
+        {
+            questionId: 7,
+            question: "Shortcut für Kopieren 7",
             description: "Beschreibung",
             keyCombination:
                 [
