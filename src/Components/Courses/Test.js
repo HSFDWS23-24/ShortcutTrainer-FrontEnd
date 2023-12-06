@@ -3,6 +3,7 @@ import { useEffect, useState} from "react";
 import { Button } from "@mui/material";
 import Api from "../../api/Model";
 import './Test.css';
+import Keyboard from '../Questions/Keyboard';
 
 export default function Test(props){
 
@@ -38,6 +39,10 @@ export default function Test(props){
                 <p> 
                 {allQuestions[questionNum].question}
                 </p>
+
+                <div class = "keyboard">
+                    <Keyboard/>
+                </div>
 
                 <div class = "QuestionButtons">
                     <Button variant="contained" onClick={clickPreviousquestion}>Vorherige Frage</Button>

@@ -9,7 +9,7 @@
     border-color: rgb(153, 153, 153);
     border-style: solid;
     box-shadow: 0 0 10px rgba(48, 48, 48, 0.788); 
-    margin-bottom: 0%;
+    margin-bottom: 0;
 
 }
 
@@ -35,4 +35,5 @@
 .QuestionButtons{
     display: flex;
     justify-content: space-evenly;
+    margin-top: 5%;
 }
