@@ -3,7 +3,7 @@ import { useEffect, useState} from "react";
 import { Button } from "@mui/material";
 import Api from "../../api/Model";
 import './Test.css';
-import Question from '../Questions/Question';
+import Keyboard from '../Questions/Question';
 
 export default function Test(props){
 
@@ -41,7 +41,7 @@ export default function Test(props){
                 </p>
 
                 <div class = "keyboard">
-                    <Question></Question>
+                    <Keyboard/>
                 </div>
 
                 <div class = "QuestionButtons">

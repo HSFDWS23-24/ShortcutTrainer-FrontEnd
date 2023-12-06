@@ -3,7 +3,7 @@ import { useEffect, useState} from "react";
 import { Button } from "@mui/material";
 import Api from "../../api/Model";
 import './Learn.css';
-import Question from '../Questions/Question';
+import Keyboard from '../Questions/Question';
 
 export default function Learn(props){
 
@@ -42,7 +42,7 @@ export default function Learn(props){
                 </p>
 
                 <div class = "keyboard">
-                    <Question></Question>
+                    <Keyboard/>
                 </div>
 
                 <div class = "QuestionButtons">
