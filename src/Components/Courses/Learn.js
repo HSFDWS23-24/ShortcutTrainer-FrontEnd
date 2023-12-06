@@ -3,7 +3,7 @@ import { useEffect, useState} from "react";
 import { Button } from "@mui/material";
 import Api from "../../api/Model";
 import './Learn.css';
-import Keyboard from '../Questions/Question';
+import Keyboard from '../Questions/Keyboard';
 
 export default function Learn(props){
 
