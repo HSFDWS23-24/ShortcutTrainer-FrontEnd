@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Learn from "../StudyingMethods/Learn";
 import Test from "../StudyingMethods/Test";
 import "./Course.css";
-import { Typography } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import "@material/web/button/elevated-button.js";
 import "@material/web/button/outlined-button.js";
 import Api from "../../api/Model";
@@ -14,8 +14,6 @@ export default function Course(props) {
   const starbuttonChange = () => {
     setYellow(previsYellow => !previsYellow);
   };
-
-  const allQuestions = Api.getQuestions(props.course.courseId);
   
   return (
     <>
@@ -42,14 +40,14 @@ export default function Course(props) {
 
           <div className="learn_test_buttons">
             <div className="test_button">
-              <md-elevated-button>
+              <Button onClick={props.clickLearnHandler}>
                 <Typography>Learn</Typography>
-              </md-elevated-button>
+              </Button>
             </div>
             <div className="learn_button">
-              <md-elevated-button>
+              <Button onClick={props.clickTestHandler}>
                 <Typography>Test</Typography>
-              </md-elevated-button>
+              </Button>
             </div>
           </div>
         </div>

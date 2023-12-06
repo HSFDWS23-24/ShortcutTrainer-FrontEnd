@@ -18,10 +18,6 @@ export default function Landing(props) {
     <main>
       <div
         className="landingText"
-        style={{
-          backgroundImage: `url(${keyboardwhite})`,
-          backgroundSize: "cover",
-        }}
       >
         <div className="textContainer">
           <h3 className="title">Herzlich willkommen! </h3>

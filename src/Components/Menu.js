@@ -32,7 +32,7 @@ export default function MenuComponent(props) {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Toolbar className='toolbar' style={{ justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <IconButton className="menu-icon" onClick={toggleMenu} color="inherit">
@@ -62,20 +62,10 @@ export default function MenuComponent(props) {
             </Button>
           </div>
 
-          <div className="logo">Shortcut Tainer</div>
+          <div className="logo">Shortcut Trainer</div>
         </div>
 
-        <div className="search-bar" style={{ flexGrow: 1, textAlign: 'center' }}>
-          <InputBase
-            className="search"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <IconButton onClick={handleSearch} color="inherit">
-            <FaSearch />
-          </IconButton>
-        </div>
+      
 
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div className='language'>

@@ -1,11 +1,11 @@
 body {
-  background-color: rgb(167, 159, 159);
+  background-color: rgb(255, 255, 255);
   height: 100%;
   width: 100%; 
 }
 
 main{
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
 }
 
 .course_main {
@@ -80,4 +80,10 @@ main{
 
 .test_button {
   margin-right: 70px;
+  background-color: blue;
+}
+
+.learn_button {
+
+  background-color: blue;
 }
