@@ -52,7 +52,6 @@ export default function Course(props) {
             </div>
           </div>
         </div>
-        <Question/>
       </main>
     </>
   );
