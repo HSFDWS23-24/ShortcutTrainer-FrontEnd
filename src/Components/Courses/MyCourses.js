@@ -12,6 +12,9 @@ export default function MyCourses(props) {
 
 
   const courseElements = myCourses.map((course) => {
+    if (props.favourites && !course.isFavourite) {
+      return null;
+    }
     return (
       <>
         <CourseTile

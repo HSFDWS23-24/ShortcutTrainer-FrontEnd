@@ -33,7 +33,7 @@ export default function Landing(props) {
           </p>
         </div>
       </div>
-      <MyCourses clickedTileToLanding={clickedTileHandler} />
+      <MyCourses clickedTileToLanding={clickedTileHandler} favourites={false}/>
 
     </main>
   );
