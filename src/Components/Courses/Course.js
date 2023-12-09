@@ -16,42 +16,33 @@ export default function Course(props) {
   };
   
   return (
-    <>
-      <main>
-        <div className="course_main">
-          <div className="headline">
-            <Typography variant="h3" color="textPrimary">
-              {props.course.courseTitle}
-            </Typography>
+        <div className="window">
+
+          <div className="CourseTitleAndStar">
+            <div className="CourseTitle">
+              <h1>{props.course.courseTitle}</h1>
+            </div>
+
+            <div className ="star">
+              <button
+                className="star-button"
+                onClick={starbuttonChange}
+                style={{ color: isYellow ? "grey" : "gold" }}
+              >
+              <span className="star">&#9733;</span>
+              </button>
+            </div>
+ 
           </div>
 
-          <div className="course_middle">
-            <div className="description">
-              <Typography>{props.course.description}</Typography>
-            </div>
-            <button
-              className="star-button"
-              onClick={starbuttonChange}
-              style={{ color: isYellow ? "grey" : "gold" }}
-            >
-              <span className="star">&#9733;</span>
-            </button>
+          <div className="CourseContent">
+            <h3>{props.course.description}</h3> 
           </div>
 
           <div className="learn_test_buttons">
-            <div className="test_button">
-              <Button onClick={props.clickLearnHandler}>
-                <Typography>Learn</Typography>
-              </Button>
-            </div>
-            <div className="learn_button">
-              <Button onClick={props.clickTestHandler}>
-                <Typography>Test</Typography>
-              </Button>
-            </div>
+              <Button variant="contained" onClick={props.clickLearnHandler}>Learn </Button>
+              <Button variant ="contained"onClick={props.clickTestHandler}>Test</Button>
           </div>
         </div>
-      </main>
-    </>
   );
 }
