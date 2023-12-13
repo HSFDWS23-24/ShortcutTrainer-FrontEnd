@@ -26,8 +26,6 @@ export default function Learn(props) {
     setprogressValue((lengthQuestionAnswered / lengthQuestions) * 100);
   }, [lengthQuestionAnswered, lengthQuestions]);
 
-  console.log(progressValue);
-  console.log(lengthQuestions);
 
   function clickPreviousquestion() {
     if (questionNum !== 0) {
@@ -37,7 +35,6 @@ export default function Learn(props) {
 
   function addQuestionUnanswered() {
     setlengthQuestionAnswered((prevLength) => prevLength + 1);
-    console.log("Vor dem Summieren" + lengthQuestionAnswered);
   }
 
   function checkQuestion() {

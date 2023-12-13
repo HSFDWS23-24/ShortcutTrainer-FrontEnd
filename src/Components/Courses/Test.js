@@ -20,8 +20,6 @@ export default function Test(props) {
     setprogressValue(((questionNum + 1) / lengthQuestions) * 100);
   }, [questionNum, lengthQuestions]);
 
-  console.log(progressValue);
-  console.log(lengthQuestions);
 
   function clickPreviousquestion() {
     if (questionNum !== 0) {
