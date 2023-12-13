@@ -132,3 +132,12 @@ input {
   .hg-button.hg-functionBtn.hg-button-space {
     width: 350px;
   }
+
+  .typedKeys{
+    display: flex;
+    justify-content: center;
+  }
+
+  .typedKeys p {
+    font-size: 30px;
+  }

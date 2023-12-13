@@ -1,17 +1,57 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 import "./KeyboardLayout.css";
+import { Backspace } from "@mui/icons-material";
 
-export default function KeyboardLayout (Props) {
+export default function KeyboardLayout(Props) {
   const [layoutName, setLayoutName] = useState("default");
-  const [input, setInput] = useState("");
-
   const keyboard = useRef(null);
 
+  const maxLength = 20;
+  const [typedKeys, setTypedKeys] = useState([]);
+
+  const handleKeystroke = (event) => {
+    const keyPressed = event.key;
+    const lastKey = typedKeys[typedKeys.length - 1];
+
+    if (keyPressed !== "Backspace") {
+      if (typedKeys.length <= maxLength) {
+        if (lastKey !== keyPressed && typedKeys.length !== 0) {
+          setTypedKeys((prevKeys) => [...prevKeys, "+", keyPressed]);
+        } else if (lastKey !== keyPressed) {
+          setTypedKeys((prevKeys) => [...prevKeys, keyPressed]);
+        }
+      }
+    } else {
+      setTypedKeys((prevKeys) =>
+        prevKeys.length >= 3 ? prevKeys.slice(0, -2) : prevKeys.slice(0, -1)
+      );
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeystroke);
+    return () => {
+      window.removeEventListener("keydown", handleKeystroke);
+    };
+  }, [typedKeys]);
+
+
+  useEffect(() => {
+    const handleCapsLockChange = (event) => {
+      const capsLockActive = event.getModifierState("CapsLock");
+      setLayoutName(capsLockActive ? "shift" : "default");
+    };
+
+    window.addEventListener("keydown", handleCapsLockChange);
+
+    return () => {
+      window.removeEventListener("keydown", handleCapsLockChange);
+    };
+  }, [setLayoutName]);
+
   const commonKeyboardOptions = {
-    onChange: (input) => onChange(input),
-    onKeyPress: (button) => onKeyPress(button),
     theme: "simple-keyboard hg-theme-default hg-layout-default",
     physicalKeyboardHighlight: true,
     syncInstanceInputs: true,
@@ -23,20 +63,20 @@ export default function KeyboardLayout (Props) {
     ...commonKeyboardOptions,
     layout: {
       default: [
-        "{escape} {f1} {f2} {f3} {f4} {f5} {f6} {f7} {f8} {f9} {f10} {f11} {f12}",
-        "` 1 2 3 4 5 6 7 8 9 0 - = {backspace}",
-        "{tab} q w e r t y u i o p [ ] \\",
-        "{capslock} a s d f g h j k l ; ' {enter}",
-        "{shiftleft} z x c v b n m , . / {shiftright}",
-        "{controlleft} {altleft} {metaleft} {space} {metaright} {altright}",
+      "{escape} {f1} {f2} {f3} {f4} {f5} {f6} {f7} {f8} {f9} {f10} {f11} {f12}",
+      "^ 1 2 3 4 5 6 7 8 9 0 ß ´ {backspace}",
+      "{tab} q w e r t z u i o p ü +",
+      "{capslock} a s d f g h j k l ö ä # {enter}",
+      "{shiftleft} y x c v b n m , . - {shiftright}",
+      "{controlleft} {altleft} {metaleft} {space} {metaright} {altright}",
       ],
       shift: [
         "{escape} {f1} {f2} {f3} {f4} {f5} {f6} {f7} {f8} {f9} {f10} {f11} {f12}",
-        "~ ! @ # $ % ^ & * ( ) _ + {backspace}",
-        "{tab} Q W E R T Y U I O P { } |",
-        '{capslock} A S D F G H J K L : " {enter}',
-        "{shiftleft} Z X C V B N M < > ? {shiftright}",
-        "{controlleft} {altleft} {metaleft} {space} {metaright} {altright}",
+        "° ! \" § $ % & / ( ) = ? ` {backspace}",
+        "{tab} Q W E R T Z U I O P Ü *",
+        "{capslock} A S D F G H J K L Ö Ä ' {enter}",
+        "{shiftleft} Y X C V B N M ; : _ {shiftright}",
+        "{controlleft} {altleft} {metaleft} {space} {metaright} {altright}"
       ],
     },
     display: {
@@ -59,7 +99,11 @@ export default function KeyboardLayout (Props) {
   const keyboardControlPadOptions = {
     ...commonKeyboardOptions,
     layout: {
-      default: ["{prtscr} {scrolllock} {pause}", "{insert} {home} {pageup}", "{delete} {end} {pagedown}"],
+      default: [
+        "{prtscr} {scrolllock} {pause}",
+        "{insert} {home} {pageup}",
+        "{delete} {end} {pagedown}",
+      ],
     },
   };
 
@@ -90,43 +134,11 @@ export default function KeyboardLayout (Props) {
     },
   };
 
-  const onChange = (input) => {
-    setInput(input);
-    console.log("Input changed", input);
-  };
-
-  const onKeyPress = (button) => {
-    console.log("Button pressed", button);
-
-    if (
-      button === "{shift}" ||
-      button === "{shiftleft}" ||
-      button === "{shiftright}" ||
-      button === "{capslock}"
-    ) {
-      handleShift();
-    }
-  };
-
-  const handleShift = () => {
-    setLayoutName(layoutName === "default" ? "shift" : "default");
-  };
-
-  const onChangeInput = (event) => {
-    const newInput = event.target.value;
-    setInput(newInput);
-    if (keyboard.current) {
-      keyboard.current.setInput(newInput);
-    }
-  };
-
   return (
     <div>
-      <input
-        value={input}
-        placeholder={"Tap on the virtual keyboard to start"}
-        onChange={(e) => onChangeInput(e)}
-      />
+      <div className="typedKeys">
+        <p> {typedKeys}</p>
+      </div>
       <div className={"keyboardContainer"}>
         <Keyboard
           baseClass={"simple-keyboard-main"}
@@ -159,6 +171,5 @@ export default function KeyboardLayout (Props) {
       </div>
     </div>
   );
-};
-
+}
 
