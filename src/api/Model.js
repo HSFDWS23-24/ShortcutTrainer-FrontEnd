@@ -63,7 +63,8 @@ function getQuestions(id) {
                 [
                     64,
                     83
-                ]
+                ],
+            unanswered: true,
         },
         {
             questionId: 4,
@@ -73,7 +74,8 @@ function getQuestions(id) {
                 [
                     64,
                     83
-                ]
+                ],
+            unanswered: true,
         },
         {
             questionId: 5,
@@ -83,7 +85,8 @@ function getQuestions(id) {
                 [
                     64,
                     83
-                ]
+                ],
+            unanswered: false,
         },
         {
             questionId: 6,
@@ -93,7 +96,8 @@ function getQuestions(id) {
                 [
                     64,
                     83
-                ]
+                ],
+            unanswered: false,
         },
         {
             questionId: 7,
@@ -103,7 +107,8 @@ function getQuestions(id) {
                 [
                     64,
                     83
-                ]
+                ],
+            unanswered: false,
         }
     ];
 }
