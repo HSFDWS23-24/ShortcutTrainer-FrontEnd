@@ -1,0 +1,8 @@
+.myResult{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 5vw;
+    margin: 10vw;
+    background-color: white;
+}

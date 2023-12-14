@@ -4,10 +4,11 @@ import Landing from "./Components/Landing";
 import Course from "./Components/Courses/Course";
 import Learn from "./Components/Courses/Learn";
 import Test from "./Components/Courses/Test";
+import Result from "./Components/Courses/Result";
 import "./App.css";
 import Menu from "./Components/Menu";
 import Footer from "./Components/Footer";
-import Api from "./api/Model";
+import Api, { getResult } from "./api/Model";
 
 export default function App(porps) {
   const [main, setMain] = useState("Landing");
@@ -46,6 +47,10 @@ export default function App(porps) {
 
     case "Test":
       view = <Test course={getcourse}></Test>
+      break;
+
+    case "Result":
+      view = <Result course={getResult}></Result>
       break;
 
     default:
