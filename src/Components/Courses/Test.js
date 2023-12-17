@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Button, Typography } from "@mui/material";
 import Api from "../../api/Model";
 import './Test.css';
+import './Result';
 import Keyboard from '../Questions/Keyboard';
 
 
@@ -13,15 +14,16 @@ export default function Test(props) {
     const [questionNum, setQuestionNum] = useState(0);
     const allResults = Api.getResult(props.course.courseId);
     console.log(allQuestions);
+    console.log(allResults);
 
     function clickNextquestion() {
-        if (questionNum != allQuestions.length - 1) {
+        if (questionNum !== allQuestions.length - 1) {
             setQuestionNum(questionNum + 1);
         }
     }
 
     function clickPreviousquestion() {
-        if (questionNum != 0) {
+        if (questionNum !== 0) {
             setQuestionNum(questionNum - 1);
         }
     }
@@ -51,7 +53,7 @@ export default function Test(props) {
                     <Button variant="contained" onClick={clickPreviousquestion}>Vorherige Frage</Button>
                     <Button variant="contained" onClick={clickNextquestion}>Nächste Frage</Button>
                     <div className="result_button">
-                        <Button variant="contained" onClick={props.clickTestHandler}>
+                        <Button variant="contained" onClick={props.clickResultHandler}>
                             <Typography>Result</Typography>
                         </Button>
                     </div>

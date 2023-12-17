@@ -8,13 +8,18 @@ import Result from "./Components/Courses/Result";
 import "./App.css";
 import Menu from "./Components/Menu";
 import Footer from "./Components/Footer";
-import Api, { getResult } from "./api/Model";
+import Api from "./api/Model";
 
 export default function App(porps) {
   const [main, setMain] = useState("Landing");
   const getcourse = Api.getAllCourses().find(
     (e) => e.courseId === 1 /*props.id*/
   );
+
+  const getResult = Api.getResult().find(
+    (e) => e.user_id === 1
+  );
+
   console.log(getcourse);
 
   function clickedTileHandler(clickedTile) {
@@ -25,6 +30,10 @@ export default function App(porps) {
 
   function clickLearnHandler(){
     setMain("Learn");
+  }
+  
+  function clickResultHandler(){
+    setMain("Result");
   }
 
   function clickTestHandler(){
@@ -46,11 +55,11 @@ export default function App(porps) {
       break;
 
     case "Test":
-      view = <Test course={getcourse}></Test>
+      view = <Test course={getcourse} clickResultHandler = {clickResultHandler}></Test>
       break;
 
     case "Result":
-      view = <Result course={getResult}></Result>
+      view = <Result result={getResult} course={getcourse} clickedTileToApp={clickedTileHandler}></Result>
       break;
 
     default:
