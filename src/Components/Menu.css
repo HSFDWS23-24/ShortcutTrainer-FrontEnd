@@ -8,6 +8,16 @@
   box-shadow: 0 0 10px rgba(48, 48, 48, 0.788); 
 }
 
+.login {
+  background-color: black;
+  width: 50%;
+}
+
+.logout {
+  background-color: red;
+  width: 100%;
+}
+
 
 .logo {
   font-size: 1.5rem;
@@ -29,8 +39,8 @@ button {
 
 }
 
-.user-actions button {
-  margin-left: 10px;
+.user-actions {
+  display: flex;
 }
 
 .user-profile {
@@ -85,9 +95,8 @@ button {
   padding: 10px 0 0 30px;
 }
 
-.sign-in:hover,
-.user-profile:hover,
-.sign-up:hover {
+
+.user-profile:hover {
   border-style: 1 solid #555;
   border-radius: 10px;
   background-color: #555;
