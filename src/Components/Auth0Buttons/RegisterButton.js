@@ -9,7 +9,9 @@ const RegisterButton = () => {
             <button 
                 onClick={() => 
                     loginWithRedirect({
-                        screen_hint: 'signup',
+                        authorizationParams: {
+                            screen_hint: 'signup'
+                        }
                     })
                 }
             >
