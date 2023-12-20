@@ -3,7 +3,9 @@ import { AppBar, Toolbar, IconButton, InputBase, Button, Select, MenuItem } from
 import { FaSearch, FaUser, FaBars, FaHome } from 'react-icons/fa';
 import './Menu.css';
 import { ImFileText2, ImEarth } from "react-icons/im";
-
+import LoginButton from './Auth0Buttons/LoginButton';
+import LogoutButton from './Auth0Buttons/LogoutButton';
+import RegisterButton from './Auth0Buttons/RegisterButton';
 
 
 export default function MenuComponent(props) {
@@ -86,8 +88,15 @@ export default function MenuComponent(props) {
           </div>
 
           <div className="user-actions">
-            <Button className="sign-up" color="inherit">Sign Up</Button>
-            <Button className="sign-in" color="inherit">Sign In</Button>
+            <div className='login'>
+              <LoginButton />
+            </div>
+            <div className='logout'>
+              <LogoutButton />
+            </div>
+            <div className='login'>
+              <RegisterButton />
+            </div>
           </div>
 
           <div className="user-profile">
