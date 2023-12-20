@@ -22,7 +22,7 @@
 button {
   background-color: transparent;
   border: none;
-  color: white !important;
+  color: white;
   cursor: pointer;
   text-align: left !important;
   align-items: start;

@@ -2,9 +2,11 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import { Button, Typography } from "@mui/material";
 import Api from "../../api/Model";
+import "./Test.css";
+import Keyboard from "../Questions/Keyboard";
+import Progressbar from "../Progressbar/Progressbar";
 import './Test.css';
 import './Result';
-import Keyboard from '../Questions/Keyboard';
 
 
 

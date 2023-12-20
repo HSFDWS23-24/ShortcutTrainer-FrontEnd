@@ -4,86 +4,55 @@ body {
   width: 100%; 
 }
 
-main{
-  background-color: rgb(255, 255, 255);
-}
 
-.course_main {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 3px solid #e0e0e0;
-  border-radius: 10%;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-}
-
-.headline{
-  width: 1100px;
-  padding-left: 20px;
-	border-bottom: 2px solid #ccc;
-}
-
-.course_middle {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: row;
-
-}
-
-.description {
+.window{
   width: 80%;
-  /* Set the desired width */
-  margin: 0 auto;
-  /* Center the description */
+  margin-left: 10%;
+  margin-top: 9%;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 2px;
+  border-radius: 15px;
+  border-color: rgb(153, 153, 153);
+  border-style: solid;
+  box-shadow: 0 0 10px rgba(48, 48, 48, 0.788); 
+  margin-bottom: 0;
 
 }
 
+.CourseTitleAndStar {
+  display: flex;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  justify-content: space-between;
+  align-items: center;
 
-:root {
-  /* --md-elevated-button-label-text-color: blue*/
 }
 
-
-.star-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background: none;
-  height: 80px;
-  font-size: 70px;
-  width: 10%;
-
-
+.CourseContent {
+  width: 80%;
+  background-color: rgb(255, 255, 255);
 }
 
 .star {
   display: inline-block;
   transition: transform 0.3s;
+  margin-right: 15px; /* Änderung hier: 10px statt 10% */
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 70px;
 }
 
 .star-button:hover {
   transform: scale(1.2);
-  /* Make the star slightly larger on hover */
+}
+
+:root {
+  /* --md-elevated-button-label-text-color: blue*/
 }
 
 .learn_test_buttons {
-  justify-content: center;
-  margin-top: 30px;
   display: flex;
-
-
-}
-
-.test_button {
-  margin-right: 70px;
-  background-color: blue;
-}
-
-.learn_button {
-
-  background-color: blue;
+  justify-content: space-evenly;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 5%;
 }

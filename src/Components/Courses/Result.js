@@ -6,10 +6,12 @@ import { FaCheck, FaTimes, FaSmile, FaSadTear } from 'react-icons/fa';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination } from '@mui/material';
 import { textAlign } from '@mui/system';
 
+
 export default function Result(props) {
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
+
   function clickedTileHandler(clickedTile) {
     props.clickedTileToLanding(clickedTile);
   }
@@ -50,7 +52,7 @@ export default function Result(props) {
   }
 
   const resultRows = myResult && myResult[0] && myResult[0].questions
-  ? myResult[0].questions
+    ? myResult[0].questions
       .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
       .map((result) => (
         <TableRow key={result.questionId} className="table-row">
@@ -65,7 +67,7 @@ export default function Result(props) {
           </TableCell>
         </TableRow>
       ))
-  : [];
+    : [];
 
   return <div>
     <div class="window">
@@ -87,28 +89,28 @@ export default function Result(props) {
           )}</h3>
       </div>
       <div class="ResultContent">
-      <TableContainer component={Paper}>
-            <Table className="result-table" size="small" aria-label="a dense table">
-              <TableHead>
-                <TableRow>
-                  <TableCell>Question</TableCell>
-                  <TableCell>KeyCombination</TableCell>
-                  <TableCell>Assessment</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>{resultRows}</TableBody>
-            </Table>
-          </TableContainer>
-          <TablePagination
-            rowsPerPageOptions={[5, 10, 25]}
-            labelRowsPerPage="Questions per Page:"
-            component="div"
-            count={myResult && myResult[0] && myResult[0].questions ? myResult[0].questions.length : 0}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
+        <TableContainer component={Paper}>
+          <Table className="result-table" size="small" aria-label="a dense table">
+            <TableHead>
+              <TableRow>
+                <TableCell>Question</TableCell>
+                <TableCell>KeyCombination</TableCell>
+                <TableCell>Assessment</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>{resultRows}</TableBody>
+          </Table>
+        </TableContainer>
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          labelRowsPerPage="Questions per Page:"
+          component="div"
+          count={myResult && myResult[0] && myResult[0].questions ? myResult[0].questions.length : 0}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
       </div>
     </div>
     <div className="mycourse">{courseelement}</div>

@@ -31,6 +31,12 @@
     background-color: rgb(255, 255, 255);
 }
 
+.Progressbar{
+    float: right;
+    margin-top: 1%;
+    width: 20%;
+}
+
 .QuestionButtons{
     display: flex;
     justify-content: space-evenly;
