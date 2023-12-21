@@ -7,25 +7,24 @@ import Keyboard from "../Questions/Keyboard";
 import Progressbar from "../Progressbar/Progressbar";
 
 export default function Learn(props) {
-  const allQuestions = Api.getQuestions(props.course.courseId);
+  const [allQuestions, setallQuestions] = useState(Api.getQuestions(props.course.courseId));
 
-  const lengthQuestions = allQuestions.length;
+  const questionAmount = allQuestions.length;
 
   const [questionNum, setQuestionNum] = useState(0);
-  const [lengthQuestionAnswered, setlengthQuestionAnswered] = useState(
+  const [questionAmountAnswered, setquestionAmountAnswered] = useState(
     allQuestions.filter(function (item) {
       return item.unanswered;
     }).length
   );
 
   const [progressValue, setprogressValue] = useState(
-    (lengthQuestionAnswered / lengthQuestions) * 100
+    (questionAmountAnswered / questionAmount) * 100
   );
 
   useEffect(() => {
-    setprogressValue((lengthQuestionAnswered / lengthQuestions) * 100);
-  }, [lengthQuestionAnswered, lengthQuestions]);
-
+    setprogressValue((questionAmountAnswered / questionAmount) * 100);
+  }, [questionAmountAnswered, questionAmount]);
 
   function clickPreviousquestion() {
     if (questionNum !== 0) {
@@ -34,14 +33,20 @@ export default function Learn(props) {
   }
 
   function addQuestionUnanswered() {
-    setlengthQuestionAnswered((prevLength) => prevLength + 1);
+    setquestionAmountAnswered((prevLength) => prevLength + 1);
   }
 
   function checkQuestion() {
     if (
-      lengthQuestionAnswered < lengthQuestions &&
+      questionAmountAnswered < questionAmount &&
       !allQuestions[questionNum].unanswered
     ) {
+      const updatedQuestions = [...allQuestions];
+      updatedQuestions[questionNum] = {
+        ...updatedQuestions[questionNum],
+        unanswered: true,
+      };
+      setallQuestions(updatedQuestions);
       addQuestionUnanswered();
     }
   }

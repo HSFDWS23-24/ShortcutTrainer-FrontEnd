@@ -9,16 +9,16 @@ import Progressbar from "../Progressbar/Progressbar";
 export default function Test(props) {
   const allQuestions = Api.getQuestions(props.course.courseId);
 
-  const lengthQuestions = allQuestions.length;
+  const questionAmount = allQuestions.length;
 
   const [questionNum, setQuestionNum] = useState(0);
   const [progressValue, setprogressValue] = useState(
-    (questionNum/ lengthQuestions) * 100
+    (questionNum/ questionAmount) * 100
   );
 
   useEffect(() => {
-    setprogressValue(((questionNum + 1) / lengthQuestions) * 100);
-  }, [questionNum, lengthQuestions]);
+    setprogressValue(((questionNum + 1) / questionAmount) * 100);
+  }, [questionNum, questionAmount]);
 
 
   function clickPreviousquestion() {
