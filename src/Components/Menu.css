@@ -8,6 +8,15 @@
   box-shadow: 0 0 10px rgba(48, 48, 48, 0.788); 
 }
 
+.login {
+  width: 60%;
+  height: 50%;
+}
+
+.logout {
+  width: 100%;
+}
+
 
 .logo {
   font-size: 1.5rem;
@@ -29,7 +38,9 @@ button {
 
 }
 
-.user-actions button {
+.user-actions {
+  display: flex;
+  width: auto;
   margin-left: 10px;
 }
 
@@ -37,6 +48,7 @@ button {
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .user-profile span {
@@ -85,9 +97,10 @@ button {
   padding: 10px 0 0 30px;
 }
 
-.sign-in:hover,
+
 .user-profile:hover,
-.sign-up:hover {
+.login:hover,
+.logout:hover {
   border-style: 1 solid #555;
   border-radius: 10px;
   background-color: #555;
