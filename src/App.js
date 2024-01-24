@@ -4,6 +4,7 @@ import Landing from "./Components/Landing";
 import Course from "./Components/Courses/Course";
 import Learn from "./Components/Courses/Learn";
 import Test from "./Components/Courses/Test";
+import Profile from "./Components/Profile";
 import "./App.css";
 import Menu from "./Components/Menu";
 import Footer from "./Components/Footer";
@@ -30,6 +31,10 @@ export default function App(porps) {
     setMain("Test");
   }
 
+  function showProfile() {
+    setMain("Profile");
+  }
+
   var view = <Landing clickedTileToApp={clickedTileHandler} />;
   switch (main) {
     case "Landing":
@@ -48,6 +53,10 @@ export default function App(porps) {
       view = <Test course={getcourse}></Test>
       break;
 
+    case "Profile":
+      view = <Profile />;
+      break;
+
     default:
       break;
   }
@@ -55,7 +64,7 @@ export default function App(porps) {
   return (
     <>
       <main>
-        <Menu />
+        <Menu showProfile={showProfile} />
 
         {view}
         
