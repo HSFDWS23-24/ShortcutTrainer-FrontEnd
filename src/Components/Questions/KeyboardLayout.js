@@ -134,10 +134,13 @@ export default function KeyboardLayout(Props) {
     },
   };
 
+  Props.OnSaveInputData(typedKeys);
+
   return (
     <div>
       <div className="typedKeys">
         <p> {typedKeys}</p>
+        {console.log(typedKeys)}
       </div>
       <div className={"keyboardContainer"}>
         <Keyboard
