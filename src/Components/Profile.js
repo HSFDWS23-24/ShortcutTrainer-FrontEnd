@@ -13,12 +13,18 @@ const Profile = () => {
         isAuthenticated && (
             <div className="window">
                 <article className="Content">
-                    {user?.picture && <img className="image" src={user.picture} alt={user?.name} />}
-                    <br></br>
+                    <div className = "img">
+                    {user?.picture && <img src={user.picture} alt={user?.name} />}
+                    </div>
+                    
                     <h2>{user?.name}</h2>
-                    <br></br>
+                    <div className = "info">
+                        <h3>E-Mail: {user?.email}</h3>
+                        <h3>Username: {user?.nickname}</h3>
+                    </div>
+                    
                     <ul>
-                        {Object.keys(user).map((objKey, i) => <li key={i}>{objKey}: {user[objKey]}</li>)}
+                     {/*  {Object.keys(user).map((objKey, i) => <li key={i}>{objKey}: {user[objKey]}</li>)} */}
                     </ul>
                 </article>
             </div>
