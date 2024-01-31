@@ -8,23 +8,50 @@ export default function Keyboard(props) {
   const [InputState, setInputState] = useState("");
   const saveInputDataHandler = (enteredInputData) => {
     let check = true;
-    for (let i = 0; i < example.length; i++) {
-      if (enteredInputData[i] != example[i]) {
-        check = false;
+  
+      if (props.sendMessageToKeyboard === true) {
+        if (example.length != enteredInputData.length) {
+          setInputState("False");
+        } else {
+        for (let i = 0; i < example.length; i++) {
+          if (enteredInputData[i] != example[i]) {
+            check = false;
+          }
+        }
+        if (check) {
+          setInputState("Correct");
+        } else {
+          setInputState("False");
+        }
       }
-    }
-    if(check){
-        setInputState("Correct");
-    }else{
+      } else {
         setInputState("");
-    }
-      
+      }
+    
+    };
 
-  };
+  let resultColor;
+  if (InputState == "Correct") {
+    resultColor = true;
+  } else {
+    resultColor = false;
+  }
+
   return (
-    <div>
-      <p>{InputState}</p>
-      <KeyboardLayout OnSaveInputData={saveInputDataHandler} />
+    <div style={{ position: "relative" }}>
+      <p
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          color: resultColor ? "green" : "red",
+          fontSize: "30px",
+        }}
+      >
+        {InputState}
+      </p>
+      <KeyboardLayout OnSaveInputData={saveInputDataHandler} shouldClearInput={props.onshouldClearInput} InputCleared={props.onInputCleared}  />
     </div>
   );
 }
+// 
