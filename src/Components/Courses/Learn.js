@@ -7,7 +7,12 @@ import Keyboard from "../Questions/Keyboard";
 import Progressbar from "../Progressbar/Progressbar";
 
 export default function Learn(props) {
-  const [allQuestions, setallQuestions] = useState(Api.getQuestions(props.course.courseId));
+  const [allQuestions, setallQuestions] = useState(
+    Api.getQuestions(props.course.courseId)
+  );
+  const [checkrequest, setcheckrequest] = useState(false);
+  const [shouldClearInput, setShouldClearInput] = useState(false);
+
 
   const questionAmount = allQuestions.length;
 
@@ -49,13 +54,22 @@ export default function Learn(props) {
       setallQuestions(updatedQuestions);
       addQuestionUnanswered();
     }
+    setcheckrequest(true);
   }
 
   function clickNextquestion() {
     if (questionNum !== allQuestions.length - 1) {
       setQuestionNum(questionNum + 1);
     }
+    setcheckrequest(false);
+    setShouldClearInput(true);
+
   }
+
+  const handleInputCleared = () => {
+    setShouldClearInput(false);
+  };
+
 
   return (
     <div class="window">
@@ -73,7 +87,7 @@ export default function Learn(props) {
         <p>{allQuestions[questionNum].question}</p>
 
         <div class="keyboard">
-          <Keyboard />
+          <Keyboard sendMessageToKeyboard={checkrequest}  onshouldClearInput={shouldClearInput} onInputCleared={handleInputCleared} />
         </div>
 
         <div class="QuestionButtons">

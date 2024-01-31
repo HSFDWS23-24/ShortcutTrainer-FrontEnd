@@ -4,7 +4,7 @@ import "react-simple-keyboard/build/css/index.css";
 import "./KeyboardLayout.css";
 import { Backspace } from "@mui/icons-material";
 
-export default function KeyboardLayout(Props) {
+export default function KeyboardLayout(props) {
   const [layoutName, setLayoutName] = useState("default");
   const keyboard = useRef(null);
 
@@ -134,7 +134,18 @@ export default function KeyboardLayout(Props) {
     },
   };
 
-  Props.OnSaveInputData(typedKeys);
+
+
+  useEffect(() => {
+    
+    if (props.shouldClearInput) {
+      setTypedKeys([]);
+
+      props.InputCleared();
+    }
+  }, [props.shouldClearInput]);
+
+  props.OnSaveInputData(typedKeys);
 
   return (
     <div>
