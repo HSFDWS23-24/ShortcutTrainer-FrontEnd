@@ -1,0 +1,29 @@
+.mycourse{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 5vw;
+    margin: 10vw;
+    background-color: white;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .result-table th, .result-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .result-table th {
+    background-color: #f2f2f2;
+  }
+
+  .table-row:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }

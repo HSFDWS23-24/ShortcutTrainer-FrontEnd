@@ -1,25 +1,30 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { Button } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Button, Typography } from "@mui/material";
 import Api from "../../api/Model";
 import "./Test.css";
 import Keyboard from "../Questions/Keyboard";
 import Progressbar from "../Progressbar/Progressbar";
+import './Test.css';
+import './Result';
 
 export default function Test(props) {
   const allQuestions = Api.getQuestions(props.course.courseId);
-
   const questionAmount = allQuestions.length;
 
   const [questionNum, setQuestionNum] = useState(0);
-  const [progressValue, setprogressValue] = useState(
-    (questionNum/ questionAmount) * 100
+  const [progressValue, setProgressValue] = useState(
+    (questionNum / questionAmount) * 100
   );
 
   useEffect(() => {
-    setprogressValue(((questionNum + 1) / questionAmount) * 100);
+    setProgressValue(((questionNum + 1) / questionAmount) * 100);
   }, [questionNum, questionAmount]);
 
+  function clickNextquestion() {
+    if (questionNum !== questionAmount - 1) {
+      setQuestionNum(questionNum + 1);
+    }
+  }
 
   function clickPreviousquestion() {
     if (questionNum !== 0) {
@@ -28,34 +33,24 @@ export default function Test(props) {
   }
 
   function checkQuestion() {
-  }
-
-  function clickNextquestion() {
-    if (questionNum !== allQuestions.length - 1) {
-      setQuestionNum(questionNum + 1);
-    }
+    // Implement your logic to check the question here
   }
 
   return (
-    <div class="window">
-      <div class="CourseTitle">
-        <h1>{props.course.courseTitle}</h1>
-      </div>
-
-      <div class="CourseContent">
-        <div class="Progressbar">
+    <div className="window">
+      <div className="CourseTitle">
+        <div className="Progressbar">
           <Progressbar value={progressValue} />
         </div>
-
-        <h3>{allQuestions[questionNum].description}:</h3>
-
-        <p>{allQuestions[questionNum].question}</p>
-
-        <div class="keyboard">
+        <h1>{props.course.courseTitle}</h1>
+      </div>
+      <div className="CourseContent">
+        <h3>{allQuestions[questionNum]?.description}:</h3>
+        <p>{allQuestions[questionNum]?.question}</p>
+        <div className="keyboard">
           <Keyboard />
         </div>
-
-        <div class="QuestionButtons">
+        <div className="QuestionButtons">
           <Button variant="contained" onClick={clickPreviousquestion}>
             Vorherige Frage
           </Button>
@@ -65,6 +60,13 @@ export default function Test(props) {
           <Button variant="contained" onClick={clickNextquestion}>
             Nächste Frage
           </Button>
+          {questionNum === questionAmount - 1 && (
+            <div className="result_button">
+              <Button variant="contained" onClick={props.clickResultHandler}>
+                <Typography>Result</Typography>
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </div>

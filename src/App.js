@@ -4,6 +4,7 @@ import Landing from "./Components/Landing";
 import Course from "./Components/Courses/Course";
 import Learn from "./Components/Courses/Learn";
 import Test from "./Components/Courses/Test";
+import Result from "./Components/Courses/Result";
 import Profile from "./Components/Profile";
 import "./App.css";
 import Menu from "./Components/Menu";
@@ -16,6 +17,11 @@ export default function App(porps) {
   const getcourse = Api.getAllCourses().find(
     (e) => e.courseId === clickedCourseID /*props.id*/
   );
+
+  const getResult = Api.getResult().find(
+    (e) => e.user_id === 1
+  );
+
   console.log(getcourse);
 
   function clickedTileHandler(clickedTile) {
@@ -23,10 +29,14 @@ export default function App(porps) {
       setMain("Course");
       setclickedCourseID(clickedTile);
     }
-  }
-  
+  } 
+
   function clickLearnHandler(){
     setMain("Learn");
+  }
+  
+  function clickResultHandler(){
+    setMain("Result");
   }
 
   function clickTestHandler(){
@@ -52,7 +62,11 @@ export default function App(porps) {
       break;
 
     case "Test":
-      view = <Test course={getcourse}></Test>
+      view = <Test course={getcourse} clickResultHandler = {clickResultHandler}></Test>
+      break;
+
+    case "Result":
+      view = <Result result={getResult} course={getcourse}  clickedTileToLanding={clickedTileHandler} clickedTileToApp={clickedTileHandler}></Result>
       break;
 
     case "Profile":
