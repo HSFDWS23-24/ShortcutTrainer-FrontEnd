@@ -11,18 +11,20 @@ import Footer from "./Components/Footer";
 import Api from "./api/Model";
 
 export default function App(porps) {
+  const [clickedCourseID, setclickedCourseID] = useState(1);
   const [main, setMain] = useState("Landing");
   const getcourse = Api.getAllCourses().find(
-    (e) => e.courseId === 1 /*props.id*/
+    (e) => e.courseId === clickedCourseID /*props.id*/
   );
   console.log(getcourse);
 
   function clickedTileHandler(clickedTile) {
     if (clickedTile) {
       setMain("Course");
+      setclickedCourseID(clickedTile);
     }
   }
-
+  
   function clickLearnHandler(){
     setMain("Learn");
   }
