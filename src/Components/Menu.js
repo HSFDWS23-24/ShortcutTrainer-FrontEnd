@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AppBar, Toolbar, IconButton, InputBase, Button, Select, MenuItem } from '@mui/material';
 import { FaSearch, FaUser, FaBars, FaHome } from 'react-icons/fa';
 import './Menu.css';
@@ -6,6 +6,7 @@ import { ImFileText2, ImEarth } from "react-icons/im";
 import LoginButton from './Auth0Buttons/LoginButton';
 import LogoutButton from './Auth0Buttons/LogoutButton';
 import RegisterButton from './Auth0Buttons/RegisterButton';
+import ProfileButton from './Auth0Buttons/ProfileButton';
 
 
 export default function MenuComponent(props) {
@@ -100,8 +101,7 @@ export default function MenuComponent(props) {
           </div>
 
           <div className="user-profile">
-            <FaUser />
-            <span>User Name</span>
+             <ProfileButton onClick={() => props.showProfile()} />
           </div>
         </div>
       </Toolbar>
