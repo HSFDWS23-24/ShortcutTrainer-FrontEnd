@@ -114,9 +114,8 @@ function getQuestions(id) {
 }
 
 
-
 function getResult() {
-    /*fetch("https://virtserver.swaggerhub.com/KEVINSCHERF/ShortcutTraine/1.0.0/Questions?id=" + id)
+    /*fetch("https://wa-shortcut-be.azurewebsites.net/api/Course?userId=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX1&language=de-DE)
     .then(e => e.json())
     .then(e => {
         return e;

@@ -19,7 +19,7 @@ export default function Result(props) {
   function handleChangePage(event, newPage) {
     setPage(newPage);
   }
-  //Hier sollten die Results gefetched werden, die der Nutzer gerade abgeschlossen hat
+
   function handleChangeRowsPerPage(event) {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
@@ -41,7 +41,6 @@ export default function Result(props) {
 
   const overallAssessment = myResult && myResult[0] && myResult[0].overallAssessment;
 
-  // Determine mood icon and message based on overallAssessment
   let moodIcon, congratulatoryMessage;
   if (overallAssessment >= 60) {
     moodIcon = <FaSmile style={{ color: 'green', fontSize: '24px' }} />;
@@ -72,7 +71,7 @@ export default function Result(props) {
   return <div>
     <div class="window">
       <div class="CourseTitle">
-        <h1>{props.course.courseTitle}</h1>
+        <h1>Result of {props.course.courseTitle}</h1>
       </div>
       <div class="Bewertung">
         <h3 style={{ textAlign: 'center' }}> <h3 style={{ textAlign: 'center' }}>Overall Assessment: {overallAssessment}</h3>

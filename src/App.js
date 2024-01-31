@@ -26,7 +26,7 @@ export default function App(porps) {
     if (clickedTile) {
       setMain("Course");
     }
-  }
+  } 
 
   function clickLearnHandler(){
     setMain("Learn");
@@ -59,7 +59,7 @@ export default function App(porps) {
       break;
 
     case "Result":
-      view = <Result result={getResult} course={getcourse} clickedTileToApp={clickedTileHandler}></Result>
+      view = <Result result={getResult} course={getcourse}  clickedTileToLanding={clickedTileHandler} clickedTileToApp={clickedTileHandler}></Result>
       break;
 
     default:
